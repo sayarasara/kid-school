@@ -41,6 +41,22 @@ div {
 .card-1 {
     box-shadow: 0 4px 8px 0;
 box-shadow:rgba(0, 187, 255, 0.938);
+color-scheme: light blue;
+background-color: aqua;
+
+}
+.card-2{
+        box-shadow: 0 4px 8px 0;
+    box-shadow:rgba(0, 187, 255, 0.938);
+    color-scheme: light blue;
+    background-color: rgba(255, 166, 0, 0.511);
+    
+}
+.card-3 {
+    box-shadow: 0 4px 8px 0;
+box-shadow:rgba(0, 187, 255, 0.938);
+color-scheme: light blue;
+background-color: violet;
 }
 header {
     background-color: #007bff;
@@ -77,4 +93,7 @@ footer {
     nav li {
         margin: 0.5rem;
     }
+}
+button {
+    border-radius: 5px;
 }
