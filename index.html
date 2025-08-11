@@ -1,72 +1,567 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
- </head>
-<body>
-    <header>
-        <div class="container">
-    <nav>
-        <ul>
-            <li><a href="#"></a>     
- <img width="30px" src="https://assets.pippa.io/shows/cover/1708103675812-8e0db96945bc76fc4f28501f42183d39.jpeg">School</a></li>
-            <li style="color: coral;">Home</li>
-            <li style="color: rgb(86, 183, 243);"><a href="#">About</a></li>
-            <li style="color: aqua;"><a href="#">Facilities</a></li>
-            <li style="color: blue;"><a href="#">Admission</a></li>
-        </ul>
-        <button style="background-color: rgba(255, 119, 0, 0.971);">Contact</button>
-    </nav>
-</div>
-</header>
-<section class="hero">
-    <div class="container">
-        <img src="hero-image.png">
-          <h1>  Empowering students from small age towards vision
-        </h1>
-        <p>
-            With the courage,confidence,creativity and compassion to
-             make aunique contribution in a diveerse and dynamic world.
-        </p>
-        <button style="color: black;">Enroll Now</button>
-    </div>
-</section>
-<div class="card-1">
-    <img src="c:/Users/SBC/B11-A2-Kids-School/assets/kinder.png" width="100px">
-    <h2>Kinder (3-6) Years</h2>
-    <p>Kindergerden is the first stage in the move from home to formal education</p>
-    <button style="background-color: rgb(215, 238, 250);">Read More</button>
-    </div>
-    <div class="card-2">
-        <img src="c:/Users/SBC/B11-A2-Kids-School/assets/elementary.png" width="100px" >
-        <h2>Elementory School</h2>
-        <p>Kindergerden is the first stage in the move from home to formal education</p>
-        <button style="background-color: orange;">Read More</button>
-        </div>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kids Education | Learn & Play</title>
+  <style>
+    /* Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial Rounded MT Bold', 'Arial', sans-serif;
+    }
 
-        <div class="card-3">
-            <img src="c:/Users/SBC/B11-A2-Kids-School/assets/middle.png" width="100px" >
-            <h2>Middle(10-16)Years</h2>
-            <p>Kindergerden is the first stage in the move from home to formal education</p>
-            <button style="background-color: blueviolet;">Read More</button>
+    body {
+      background-color: #f9f7fe;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      background-color: #4183de;
+      padding: 1rem 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: white;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 1.1rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 6rem 0;
+      text-align: center;
+      background: linear-gradient(135deg, #1d53c7, #9370db);
+      color: white;
+        background-image: url('https://www.shutterstock.com/image-photo/little-child-playing-superhero-kid-260nw-1285010560.jpg');
+  background-size: cover;
+  background-position: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #ff8c42;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* Courses Section - Updated Card Style */
+    .courses {
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #6a5acd;
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .course-card {
+      background: white;
+      border-radius: 10px;
+      padding: 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .course-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .course-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      margin-bottom: 0;
+    }
+
+    .course-content {
+      padding: 1.5rem;
+    }
+
+    .course-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: #4b6cb7;
+    }
+
+    .course-card p {
+      color: #666;
+    }
+
+    /* Info Table (From Your Image) */
+    .info-section {
+      padding: 3rem 0;
+      background-color: #e6e6fa;
+    }
+
+    .info-table {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      border-collapse: collapse;
+    }
+
+    .info-table tr {
+      border-bottom: 1px solid #ddd;
+    }
+
+    .info-table td {
+      padding: 1.2rem;
+      font-size: 1.1rem;
+    }
+
+    .info-table td:first-child {
+      font-weight: bold;
+      width: 40%;
+    }
+
+    /* Footer - Updated Style */
+    footer {
+      background-color: #4b6cb7;
+      color: white;
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 2rem;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .divider {
+      width: 80%;
+      height: 1px;
+      background-color: rgba(255,255,255,0.3);
+      margin: 1rem auto;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+      <div class="logo">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRuNJVH9RmDGThbWfltHVoFCSSEwypSBljSw&s" alt="" width="30" height="30">
+  SCHOOL
+</div>
+        <div class="nav-links">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Facilities</a>
+          <a href="#">Admission</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Empowering
+students from small age towards vision</h1>
+      <p>Interactive courses designed to make education exciting.</p>
+      <a href="#" class="btn">Enroll Now</a>
+    </div>
+  </section>
+
+  <!-- Courses Section -->
+  <section class="courses">
+    <div class="container">
+      <h2 class="section-title">Popular Courses</h2>
+      <div class="course-grid">
+        <div class="course-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7eLKbpgEppNnm3qP5QRFO2Qzp63gpnHa34Lj_ShIKHfK1AJT6ZhuIqUOiL0_H3f9YeAw&usqp=CAU" alt="Math Course">
+          <div class="course-content">
+            <h3>Kinder (3-6) Years</h3>
+            <p>Cum sociis natoque penatibus et magnis
+dis parturient montes, nascetur ridiculus
+mu sdis parturient</p>
+          </div>
+        </div>
+        <div class="course-card">
+          <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="ABC Course">
+          <div class="course-content">
+            <h3>ABC World</h3>
+            <p>Master the alphabet.</p>
+          </div>
+        </div>
+        <div class="course-card">
+          <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Science Course">
+          <div class="course-content">
+            <h3>Science Explorers</h3>
+            <p>Discover the wonders of science.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <style>
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      padding: 40px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Card Grid Layout */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* Main Card (Left Side) */
+    .main-card {
+      grid-row: span 2;
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .main-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .main-card-content {
+      padding: 25px;
+    }
+
+    .date {
+      color: #6c757d;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .main-card h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #343a40;
+    }
+
+    .main-card p {
+      color: #495057;
+      line-height: 1.6;
+    }
+
+    /* Side Cards (Right Side) */
+    .side-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .side-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+    }
+
+    .side-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+    }
+
+    .side-card-content {
+      padding: 20px;
+      flex: 1;
+    }
+
+    .side-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #343a40;
+    }
+
+    .side-card p {
+      color: #6c757d;
+      font-size: 14px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .side-cards {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .main-card {
+        grid-row: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .side-cards {
+        grid-template-columns: 1fr;
+      }
+      
+      .side-card {
+        flex-direction: column;
+      }
+      
+      .side-card img {
+        width: 100%;
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2 >. . . . Our Stories . . . .</h2>
+  <div class="container">
+    <div class="card-grid">
+      <!-- Main Card (Left) -->
+      <div class="main-card">
+        <img src="https://raisingchildren.net.au/__data/assets/image/0024/47913/toddlers-making-friends.jpg">
+        <div class="main-card-content">
+          <div class="date">November 19, 2019</div>
+          <h2>A fun toddler coloring training on classroom</h2>
+          <p>Beautiful branding for changes by Never Now in Australia. changes is a platform for open discussion in an inclusive and collaborative environment, providing the...</p>
+        </div>
+      </div>
+      
+      <!-- Side Cards (Right) -->
+      <div class="side-cards">
+        <!-- Card 1 -->
+        <div class="side-card">
+          <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="School assessment">
+          <div class="side-card-content">
+            <div class="date">November 19, 2019</div>
+            <h3>Find out if a school fits the family's needs</h3>
+          </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="side-card">
+          <img src="https://www.parents.com/thmb/VK_eMsHSWaYAAAuaFnyO88r_mh0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-901208614-2000-9d4cdf4d1ad94fcb97ca78d67836a9d8.jpg">
+          <div class="side-card-content">
+            <div class="date">September 10, 2019</div>
+            <h3>Classroom management techniques for new tutors</h3>
+          </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="side-card">
+          <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Math centers">
+          <div class="side-card-content">
+            <div class="date">November 19, 2019</div>
+            <h3>Summer math & literacy centres for kids</h3>
+          </div>
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="side-card">
+          <img src="https://www.parents.com/thmb/EJEnUVlckVrlCKW_RlbN49fF6xE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Parents-GettyImages-851346706-da74c1b5249e417496b7169e9d38e94d.jpg" alt="Kids listening">
+          <div class="side-card-content">
+            <div class="date">July 19, 2019</div>
+            <h3>Conversation rhymes improve kids listening</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <style>
+        /* Footer Styles */
+        .footer {
+            background-color: #4ea3e3;
+            color: #1f2937;
+            padding: 40px 10%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-between;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .footer-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding: 5px;
+            color: #111827;
+        }
+        
+        .footer nav {
+            min-width: 150px;
+        }
+        
+        .footer a {
+            display: block;
+            margin-bottom: 10px;
+            color: #4b5563;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer a:hover {
+            color: #111827;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 16px;
+        }
+        
+        .social-icons a {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+        }
+        
+        .social-icons svg {
+            width: 100%;
+            height: 100%;
+            fill: #4b5563;
+            transition: fill 0.3s;
+        }
+        
+        .social-icons a:hover svg {
+            fill: #111827;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer {
+                flex-direction: column;
+                gap: 30px;
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <footer class="footer">
+        <nav>
+          <div class="logo">
+  <img src="https://open-images.acast.com/shows/655a8cde5c5f6900129eef4d/1754620542922-c9a390b9-550a-47c5-85e0-c6bfece34549.jpeg?height=750" alt="" width="30" height="30">
+  SCHOOL
+</div>
+            <a class="link link-hover"> :</a>
+          <br>
+            <p> Key areas of development include language, thinking, and movement. Activities like singing, reading, playing outdoors, and engaging in messy play all contribute to a toddler's learning</p>
+        </nav>
+        <nav>
+            <h6 class="footer-title"> About School </h6>
+            <a class="link link-hover"> About us .</a>
+            <a class="link link-hover">Contact .</a>
+            <a class="link link-hover">Jobs .</a>
+            <a class="link link-hover">Press kit .</a>
+        </nav>
+        <nav>
+            <h6 class="footer-title">Social</h6>
+            <div class="social-icons">
+                <a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+                    </svg>
+                </a>
+                <a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
+                    </svg>
+                </a>
+                <a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
+                    </svg>
+                </a>
             </div>
-            <header></header><h1>Kids Education</h1></header>
-            <nav>
-                <ul>   
-                    <li>Home</></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Facilities</a></li>
-                    <li>Admission</a></li>
-                </ul>
-                </nav>
-                <footer>
-                    <h3>Keep in Touch</h3>
-                   <p> <img src="c:\Users\SBC\B11-A2-Kids-School\assets\fb.png">
-                 <img src="c:\Users\SBC\B11-A2-Kids-School\assets\dribble.png">
-                    <img src="c:\Users\SBC\B11-A2-Kids-School\assets\google+.png">
-                    <img src="c:\Users\SBC\B11-A2-Kids-School\assets\twitter.png"></p>
-                </footer>
-    </body>
+        </nav>
+    </footer>
+
+
+
+</body>
 </html>
